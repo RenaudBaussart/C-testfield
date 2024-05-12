@@ -16,6 +16,7 @@ int WinnerSelector(int Player1Choice, int Player2Choice) {
 }
 
 int main() {
+    //initialisation of the veriable
     char YN = 'Y';
     int Player1Score = 0;
     int Player2Score = 0;
@@ -24,19 +25,20 @@ int main() {
     int WinnerResult = 0;
     string VoidEater = "";
     cout << "The rules of the game are simple: Rock, Paper, Scissors with 3 points.\n1 is Rock, 2 is Paper, 3 is Scissors.\nStart the game (Y/n): ";
+    //ask in a cout if you want to start the game and get the answer
     cin >> YN;
 
     if (YN == 'Y') {
-        while (Player1Score < 3 && Player2Score < 3) {
+        while (Player1Score < 3 && Player2Score < 3) {//while loop to make the game be 3 turn
             cout << "score are: 1 player " << Player1Score << " 2 player " << Player2Score << "\n say:  to continue";
             cin >> VoidEater;
             system("clear");
             cout << "1 is Rock, 2 is Paper, 3 is Scissors.\nPlayer 1: ";
-            cin >> Player1Hand;
+            cin >> Player1Hand;//get the answer of player 1     
             system("clear");
             cout << "1 is Rock, 2 is Paper, 3 is Scissors.\nPlayer 2: ";
-            cin >> Player2Hand;
-            WinnerResult = WinnerSelector(Player1Hand, Player2Hand);
+            cin >> Player2Hand;//get the answer of player 2
+            WinnerResult = WinnerSelector(Player1Hand, Player2Hand);//call the function to select the winner
             if (WinnerResult == 1) {
                 cout << "Player 1 wins!\n";
                 Player1Score++;
